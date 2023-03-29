@@ -1,0 +1,52 @@
+﻿<Window x:Class="PZ1.DetaljniPrikazUcesnika"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PZ1"
+        mc:Ignorable="d"
+        Title="DetaljniPrikazUcesnika" Height="450" Width="800" WindowStyle="None" ResizeMode="NoResize" >
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" Content="Učesnici Prvog srpskog ustanka" Background="LightGray" VerticalContentAlignment="Center" />
+
+        <Button x:Name="buttonNazad" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="5" Content="Nazad" Background="DarkGray" Click="buttonNazad_Click"  Width="80" ></Button>
+
+        <Label x:Name="labelDataljniPrikazUcesnika" Content="Detaljni prikaz ucesnika" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center"></Label>
+
+        <Label x:Name="labelImeUcesnika" Content="Ime ucesnika:" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center"></Label>
+        <Label x:Name="labelGodineUcesnika" Content="Godine ucesnika:" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center"></Label>
+        <Label x:Name="labelOpisUcesnika" Content="Opis ucesnika:" Grid.Row="4" Grid.Column="2" VerticalAlignment="Center"></Label>
+        <Label x:Name="labelDatumDodavanja" Content="Datum dodavanja:" Grid.Row="5" Grid.Column="2" VerticalAlignment="Center"></Label>
+        <Label x:Name="labelSlikaUcesnika" Content="Slika ucesnika:" Grid.Row="6" Grid.Column="2" VerticalAlignment="Center"></Label>
+
+        <TextBox x:Name="textBoxIme" Grid.Row="2" Grid.Column="3" Margin="10 10"></TextBox>
+        <TextBox x:Name="textBoxGodine" Grid.Row="3" Grid.Column="3" Margin="10 10"></TextBox>
+        <RichTextBox x:Name="rtbOpisUcesnika" IsReadOnly="True" Grid.Row="4" Grid.Column="3" Margin="10 10" ></RichTextBox>
+        <TextBox x:Name="textBoxDatumDodavanja" Grid.Row="5" Grid.Column="3" Margin="10 10"></TextBox>
+        <Image x:Name="imageSlika" Grid.Row="6" Grid.Column="3" Margin="10 10"></Image>
+
+        <Button x:Name="buttonIzadji" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" Content="Izadji" Margin="15 15" Click="buttonIzadji_Click"></Button>
+
+    </Grid>
+</Window>
