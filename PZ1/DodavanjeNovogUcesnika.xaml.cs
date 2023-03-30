@@ -42,8 +42,8 @@ namespace PZ1
             datePickerDatumDodavanja.SelectedDate = DateTime.Now;
 
             ComboBoxFamily.ItemsSource = Fonts.SystemFontFamilies.OrderBy(f => f.Source);
-            ComboBoxSize.ItemsSource = new List<double> { 8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30 };
-            ComboBoxFamily.SelectedIndex = 2;
+            ComboBoxSize.ItemsSource = new List<double> { 6, 7, 8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30 };
+            ComboBoxFamily.SelectedIndex = 4;
             ComboBoxColor.ItemsSource = new List<string>() { "Black", "White", "Yellow", "Red", "Purple", "Orange", "Green", "Brown", "Blue" };
             ComboBoxColor.SelectedIndex = 0;
         }
@@ -70,7 +70,7 @@ namespace PZ1
         {
             bool result = true;
 
-            if (textBoxImeUcesnika.Text.Trim().Equals("") || textBoxImeUcesnika.Text.Trim().Equals("Unesite ime:"))
+            if (textBoxImeUcesnika.Text.Trim().Equals(""))
             {
                 result = false;
                 labelImeUcesnikaGreska.Content = "Obavezno polje!";
@@ -84,7 +84,7 @@ namespace PZ1
                 textBoxImeUcesnika.BorderBrush = Brushes.Gray;
             }
 
-            if (textBoxGodinaRodjenja.Text.Trim().Equals("") || textBoxGodinaRodjenja.Text.Trim().Equals("Unesite godinu rođenja:"))
+            if (textBoxGodinaRodjenja.Text.Trim().Equals(""))
             {
                 result = false;
                 textBoxGodinaRodjenja.Foreground = Brushes.Red;
@@ -95,6 +95,7 @@ namespace PZ1
             }
             else
             {
+                // _ pass param to methods by reference
                 bool isNumeric = int.TryParse(textBoxGodinaRodjenja.Text, out _);
                 if (isNumeric)
                 {
@@ -112,7 +113,7 @@ namespace PZ1
                         textBoxGodinaRodjenja.Foreground = Brushes.Red;
                         textBoxGodinaRodjenja.BorderBrush = Brushes.Red;
                         textBoxGodinaRodjenja.BorderThickness = new Thickness(1);
-                        labelGodinaRodjenjaGreska.Content = "Unesite pozitivan broj (godinu rođenja)";
+                        labelGodinaRodjenjaGreska.Content = "Unesite broj (godinu rođenja)";
                     }
 
                 }
@@ -291,43 +292,5 @@ namespace PZ1
         {
             this.Close();
         }
-
-        /*
-        private void textBoxImeUcesnika_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (textBoxImeUcesnika.Text.Trim().Equals("Unesite ime učesnika"))
-            {
-                textBoxImeUcesnika.Text = "";
-                textBoxImeUcesnika.Foreground = Brushes.Black;
-            }
-        }
-
-        private void textBoxImeUcesnika_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (textBoxImeUcesnika.Text.Trim().Equals(string.Empty))
-            {
-                textBoxImeUcesnika.Text = "Unesite ime učesnika";
-                textBoxImeUcesnika.Foreground = Brushes.LightSlateGray;
-            }
-        }
-
-        private void textBoxGodinaRodjenja_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (textBoxGodinaRodjenja.Text.Trim().Equals("Unesite godinu rođenja"))
-            {
-                textBoxGodinaRodjenja.Text = "";
-                textBoxGodinaRodjenja.Foreground = Brushes.Black;
-            }
-        }
-
-        private void textBoxGodinaRodjenja_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (textBoxGodinaRodjenja.Text.Trim().Equals(string.Empty))
-            {
-                textBoxGodinaRodjenja.Text = "Unesite godinu rođenja";
-                textBoxGodinaRodjenja.Foreground = Brushes.LightSlateGray;
-            }
-        }
-        */
     }
 }

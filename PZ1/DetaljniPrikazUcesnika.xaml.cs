@@ -43,6 +43,7 @@ namespace PZ1
 
             textBoxDatumDodavanja.Text = ucesnik.DatumDodavanja.ToString("dd/MM/yyyy");
 
+            //Universal Resource Identifier
             Uri uri = new Uri(ucesnik.Slika);
             imageSlika.Source = new BitmapImage(uri);
 

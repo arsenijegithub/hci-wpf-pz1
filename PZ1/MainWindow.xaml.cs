@@ -29,7 +29,7 @@ namespace PZ1
         {
             bool rez = true;
 
-            if (textBoxKorisnickoIme.Text.Trim().Equals("") || textBoxKorisnickoIme.Text.Trim().Equals("Korisničko ime:"))
+            if (textBoxKorisnickoIme.Text.Trim().Equals(""))
             {
                 rez = false;
                 textBoxKorisnickoIme.BorderBrush = Brushes.Red;
@@ -47,7 +47,7 @@ namespace PZ1
                 textBoxKorisnickoImeGreska.Text = "";
             }
 
-            if (passwordBoxSifra.Password.Trim().Equals("") || passwordBoxSifra.Password.Trim().Equals("Šifra:"))
+            if (passwordBoxSifra.Password.Trim().Equals(""))
             {
                 rez = false;
                 passwordBoxSifra.BorderBrush = Brushes.Red;
