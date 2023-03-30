@@ -135,5 +135,19 @@
       <Name>Klasa</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="StevanSindjelic.jpg" />
+    <Resource Include="StojanCupic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="HajdukVeljkoPetrovic.jpg" />
+    <Resource Include="prvi_srpski_ustanak_pozadina.jpg" />
+    <Resource Include="VasaCarapic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="bold.png" />
+    <Resource Include="italic.png" />
+    <Resource Include="underline.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

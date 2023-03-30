@@ -15,14 +15,6 @@ namespace Klasa
         public string fajl;
         public DateTime datumDodavanja;
 
-        /*
-        public String ImeUcesnika { get; set; }
-        public int GodinaRodjenja { get; set; }
-        public String Slika { get; set; }
-        public String Fajl { get; set; }
-        public DateTime DatumDodavanja { get; set; }
-        */
-
         public bool IsSelected {
             get;
             set;
@@ -58,8 +50,7 @@ namespace Klasa
         }
         public DateTime DatumDodavanja
         {
-            get { return datumDodavanja; }
-            set { datumDodavanja = value; }
+            get { return DateTime.Now; }
         }
 
         static public void Main(String[] args)

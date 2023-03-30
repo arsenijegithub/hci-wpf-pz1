@@ -32,13 +32,13 @@
 
         <Button x:Name="buttonNazad" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="5" Content="Nazad" Background="DarkGray" Click="buttonNazad_Click" Width="80" ></Button>
 
-        <Label x:Name="labelIzmenaPostojeceg" Content="Izmena postojeceg učesnika" Foreground="Black" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+        <Label x:Name="labelIzmenaPostojeceg" Content="Izmena postojeceg učesnika" Foreground="Black" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center"></Label>
 
-        <Label x:Name="labelImeUcesnika" Content="Ime ucesnika:" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="2"></Label>
-        <Label x:Name="labelGodinaRodjenja" Content="Godina rodjenja:" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="2"></Label>
+        <Label x:Name="labelImeUcesnika" Content="Ime učesnika:" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="2"></Label>
+        <Label x:Name="labelGodinaRodjenja" Content="Godina rođenja:" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="2"></Label>
         <Label x:Name="labelDatumIzmene" Content="Datum izmene:" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="2"></Label>
         <Label x:Name="labelOpisUcesnika" Content="Opis učesnika:" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="2"></Label>
-        <Label x:Name="labelSlikaUcesnika" Content="Slika ucesnika:" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="6" Grid.Column="2"></Label>
+        <Label x:Name="labelSlikaUcesnika" Content="Slika učesnika:" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="6" Grid.Column="2"></Label>
 
         <TextBox x:Name="textBoxImeUcesnika" Grid.Row="2" Grid.Column="3" Margin="15 15"></TextBox>
         <TextBox x:Name="textBoxGodinaRodjenja" Grid.Row="3" Grid.Column="3" Margin="15 15"></TextBox>
@@ -77,7 +77,13 @@
         <Label x:Name="labelSlika" Grid.Row="6" Grid.Column="4" Content="slika" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="59" Background="LightGray"></Label>
 
         <Button x:Name="buttonIzmeni" Content="Izmeni" Grid.Row="7" Grid.Column="2" Margin="15 15" Click="buttonIzmeni_Click"></Button>
-        <Button x:Name="buttonIzadji" Content="Izadji" Grid.Row="7" Grid.Column="3" Margin="15 15" Click="buttonIzadji_Click"></Button>
+        <Button x:Name="buttonIzadji" Content="Izađi" Grid.Row="7" Grid.Column="3" Margin="15 15" Click="buttonIzadji_Click"></Button>
 
+        <Label x:Name="labelImeUcesnikaGreska" Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="2"  Margin="10 10" BorderThickness="0" Content="" Foreground="Red"></Label>
+        <Label x:Name="labelGodinaRodjenjaGreska" Grid.Row="3" Grid.Column="4" Margin="10 10" Grid.ColumnSpan="2" BorderThickness="0" Content="" Foreground="Red"></Label>
+        <Label x:Name="labelOpisGreska" Grid.Row="5" Grid.Column="4" Margin="10 10" Grid.ColumnSpan="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderThickness="0" Foreground="Red"></Label>
+        <Label x:Name="labelSlikaGreska" Grid.Row="6" Grid.Column="5" Margin="10 10" BorderThickness="0" Foreground="Red"></Label>
+        <Label x:Name="labelDatumGreska" Grid.Row="4" Grid.Column="4" Margin="10 10" BorderThickness="0" Grid.ColumnSpan="2" Foreground="Red"/>
+        
     </Grid>
 </Window>

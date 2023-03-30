@@ -30,11 +30,16 @@ namespace PZ1
         public DodavanjeNovogUcesnika()
         {
             InitializeComponent();
-            textBoxImeUcesnika.Text = "Unesite ime ucesnika:";
-            textBoxImeUcesnika.Foreground = Brushes.Thistle;
 
-            textBoxGodinaRodjenja.Text = "Unesite godinu rodjenja ucesnika:";
-            textBoxGodinaRodjenja.Foreground = Brushes.Thistle;
+            /*
+            textBoxImeUcesnika.Text = "Unesite ime";
+            textBoxImeUcesnika.Foreground = Brushes.LightSlateGray;
+
+            textBoxGodinaRodjenja.Text = "Unesite godinu rođenja";
+            textBoxGodinaRodjenja.Foreground = Brushes.LightSlateGray;
+            */
+
+            datePickerDatumDodavanja.SelectedDate = DateTime.Now;
 
             ComboBoxFamily.ItemsSource = Fonts.SystemFontFamilies.OrderBy(f => f.Source);
             ComboBoxSize.ItemsSource = new List<double> { 8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30 };
@@ -65,34 +70,28 @@ namespace PZ1
         {
             bool result = true;
 
-            if (textBoxImeUcesnika.Text.Trim().Equals("") || textBoxImeUcesnika.Text.Trim().Equals("Ime usesnika:"))
+            if (textBoxImeUcesnika.Text.Trim().Equals("") || textBoxImeUcesnika.Text.Trim().Equals("Unesite ime:"))
             {
                 result = false;
-                textBoxImeUcesnika.Foreground = Brushes.Red;
+                labelImeUcesnikaGreska.Content = "Obavezno polje!";
+                labelImeUcesnikaGreska.Foreground = Brushes.Red;
                 textBoxImeUcesnika.BorderBrush = Brushes.Red;
-                textBoxImeUcesnika.BorderThickness = new Thickness(1);
-                /*
-                textBoxKorisnickoImeGreska.Text = "Obavezno polje";
-                textBoxKorisnickoImeGreska.Foreground = Brushes.Red;
-                */
-                buttonDodaj.Background = Brushes.Red;
             }
             
             else
             {
-                textBoxImeUcesnika.Foreground = Brushes.Black;
-                textBoxImeUcesnika.BorderBrush = Brushes.Green;
-                textBoxImeUcesnika.BorderThickness = new Thickness(1);
-                // textBoxKorisnickoImeGreska.Text = "";
+                labelImeUcesnikaGreska.Content = "";
+                textBoxImeUcesnika.BorderBrush = Brushes.Gray;
             }
 
-            if (textBoxGodinaRodjenja.Text.Trim().Equals("") || textBoxGodinaRodjenja.Text.Trim().Equals("Godina rodjenja:"))
+            if (textBoxGodinaRodjenja.Text.Trim().Equals("") || textBoxGodinaRodjenja.Text.Trim().Equals("Unesite godinu rođenja:"))
             {
                 result = false;
                 textBoxGodinaRodjenja.Foreground = Brushes.Red;
                 textBoxGodinaRodjenja.BorderBrush = Brushes.Red;
                 textBoxGodinaRodjenja.BorderThickness = new Thickness(1);
-                buttonDodaj.Background = Brushes.Red;
+                labelGodinaRodjenjaGreska.Content = "Obavezno polje!";
+                labelGodinaRodjenjaGreska.Foreground = Brushes.Red;
             }
             else
             {
@@ -104,7 +103,7 @@ namespace PZ1
                         textBoxGodinaRodjenja.Foreground = Brushes.Black;
                         textBoxGodinaRodjenja.BorderBrush = Brushes.Green;
                         textBoxGodinaRodjenja.BorderThickness = new Thickness(1);
-                        // textBoxGreskaCena.Text = "";
+                        labelGodinaRodjenjaGreska.Content = "";
                     }
 
                     else
@@ -113,55 +112,72 @@ namespace PZ1
                         textBoxGodinaRodjenja.Foreground = Brushes.Red;
                         textBoxGodinaRodjenja.BorderBrush = Brushes.Red;
                         textBoxGodinaRodjenja.BorderThickness = new Thickness(1);
-                        // textBoxGreskaCena.Text = "Unesite pozitivan broj!";
+                        labelGodinaRodjenjaGreska.Content = "Unesite pozitivan broj (godinu rođenja)";
                     }
 
                 }
                 else
                 {
                     result = false;
-                    textBoxGodinaRodjenja.Foreground = Brushes.Red;
-                    textBoxGodinaRodjenja.BorderBrush = Brushes.Red;
-                    textBoxGodinaRodjenja.BorderThickness = new Thickness(1);
-                    // textBoxGreskaCena.Text = "Unesite broj!";
+                    labelGodinaRodjenjaGreska.Content = "Unesite broj!";
                 }
             }
 
-            /*
-            if (textBoxSlika.Text.Trim().Equals("Slika"))
+            var start = rtbOpisUcesnika.Document.ContentStart;
+            var end = rtbOpisUcesnika.Document.ContentEnd;
+            int difference = start.GetOffsetToPosition(end);
+
+            if (IsRichTextBoxEmpty(rtbOpisUcesnika))
             {
                 result = false;
-                borderSlika.BorderBrush = Brushes.Red;
-                borderSlika.BorderThickness = new Thickness(1);
-                labelaGreskaSlika.Content = "Obavezno!";
-                labelaGreskaSlika.Background = Brushes.LightGray;
-                labelaGreskaSlika.Foreground = Brushes.Red;
-                labelaGreskaSlika.BorderThickness = new Thickness(1);
+                labelOpisGreska.Foreground = Brushes.Red;
+                labelOpisGreska.Content = "Obavezno polje!";
+                rtbOpisUcesnika.BorderBrush = Brushes.Red;
+                rtbOpisUcesnika.BorderThickness = new Thickness(1);
+            }
 
-
+            if (labelSlika.Content.Equals("slika"))
+            {
+                result = false;
+                buttonIzaberiSliku.BorderBrush = Brushes.Red;
+                buttonIzaberiSliku.BorderThickness = new Thickness(1);
+                labelSlikaGreska.Content = "Obavezno!";
+                labelSlikaGreska.Foreground = Brushes.Red;
+                labelSlikaGreska.BorderThickness = new Thickness(1);
 
             }
             else
             {
-                borderSlika.BorderBrush = Brushes.Green;
-                borderSlika.BorderThickness = new Thickness(0);
-                labelaGreskaSlika.Content = "";
-                labelaGreskaSlika.BorderThickness = new Thickness(0);
-                textBoxSlika.Text = "";
+                labelSlika.BorderBrush = Brushes.Green;
+                labelSlika.BorderThickness = new Thickness(0);
+                labelSlikaGreska.Content = "";
+                labelSlikaGreska.BorderThickness = new Thickness(0);
+                labelSlika.Content = "";
             }
-            */
 
             if (datePickerDatumDodavanja.SelectedDate == null)
             {
                 result = false;
-
+                labelDatumGreska.FontSize = 12;
+                labelDatumGreska.Content = "Obavezno polje!";
             }
             else
             {
+                labelDatumGreska.Content = "";
+                labelDatumGreska.BorderThickness = new Thickness(0);
 
             }
 
             return result;
+        }
+
+        public bool IsRichTextBoxEmpty(RichTextBox rtb)
+        {
+            if (rtb.Document.Blocks.Count == 0) return true;
+            TextPointer startPointer = rtb.Document.ContentStart.GetNextInsertionPosition(LogicalDirection.Forward);
+            TextPointer endPointer = rtb.Document.ContentEnd.GetNextInsertionPosition(LogicalDirection.Backward);
+
+            return startPointer.CompareTo(endPointer) == 0;
         }
 
         private void buttonDodaj_Click(object sender, RoutedEventArgs e)
@@ -185,7 +201,9 @@ namespace PZ1
                 }
                 else
                 {
-                    MessageBox.Show("Popunite sva polja!", "Greška", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Popunite polja!", "Greška", MessageBoxButton.OK, MessageBoxImage.Error);
+                    textBoxImeUcesnika.Foreground = Brushes.Black;
+                    textBoxGodinaRodjenja.Foreground = Brushes.Black;
                 }
             }
         }
@@ -273,5 +291,43 @@ namespace PZ1
         {
             this.Close();
         }
+
+        /*
+        private void textBoxImeUcesnika_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (textBoxImeUcesnika.Text.Trim().Equals("Unesite ime učesnika"))
+            {
+                textBoxImeUcesnika.Text = "";
+                textBoxImeUcesnika.Foreground = Brushes.Black;
+            }
+        }
+
+        private void textBoxImeUcesnika_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (textBoxImeUcesnika.Text.Trim().Equals(string.Empty))
+            {
+                textBoxImeUcesnika.Text = "Unesite ime učesnika";
+                textBoxImeUcesnika.Foreground = Brushes.LightSlateGray;
+            }
+        }
+
+        private void textBoxGodinaRodjenja_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (textBoxGodinaRodjenja.Text.Trim().Equals("Unesite godinu rođenja"))
+            {
+                textBoxGodinaRodjenja.Text = "";
+                textBoxGodinaRodjenja.Foreground = Brushes.Black;
+            }
+        }
+
+        private void textBoxGodinaRodjenja_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (textBoxGodinaRodjenja.Text.Trim().Equals(string.Empty))
+            {
+                textBoxGodinaRodjenja.Text = "Unesite godinu rođenja";
+                textBoxGodinaRodjenja.Foreground = Brushes.LightSlateGray;
+            }
+        }
+        */
     }
 }

@@ -6,6 +6,11 @@
         xmlns:local="clr-namespace:PZ1"
         mc:Ignorable="d"
         Title="PrikazAdmin" Height="450" Width="800" WindowStyle="None" ResizeMode="NoResize" Closing="save">
+
+    <Window.Background>
+        <ImageBrush ImageSource="prvi_srpski_ustanak_pozadina.jpg" Opacity="0.3"/>
+    </Window.Background>
+
     <Grid>
 
         <Grid.RowDefinitions>
@@ -27,8 +32,8 @@
         
         <Button x:Name="buttonNazad" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="5" Content="Nazad" Background="DarkGray" Click="buttonNazad_Click" Width="80" ></Button>
 
-        <Label x:Name="labelOpisAplikacijeAdmin" Content="Dodavanje, izmena i brisanje ucesnika" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center"></Label>
-        <Label x:Name="labelOpisAplikacijePosetilac" Content="Prikaz ucesnika" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center"></Label>
+        <Label x:Name="labelOpisAplikacijeAdmin" Content="Dodavanje, izmena i brisanje ucesnika" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" Foreground="White"></Label>
+        <Label x:Name="labelOpisAplikacijePosetilac" Content="Prikaz ucesnika" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" Foreground="White"></Label>
 
         <Button x:Name="buttonDodajNovog" Content="Dodaj učesnika" Grid.Row="1" Grid.Column="2" Margin="20 20" Click="buttonDodajNovog_Click"></Button>
         <Button x:Name="buttonIzmeni" Content="Izmeni učesnika" Grid.Row="1" Grid.Column="3" Margin="20 20" Click="buttonIzmeni_Click" ></Button>

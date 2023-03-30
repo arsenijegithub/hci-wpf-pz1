@@ -32,13 +32,13 @@
 
         <Button x:Name="buttonNazad" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="5" Content="Nazad" Background="DarkGray" Click="buttonNazad_Click"  Width="80" ></Button>
 
-        <Label x:Name="labelDataljniPrikazUcesnika" Content="Detaljni prikaz ucesnika" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center"></Label>
+        <Label x:Name="labelDataljniPrikazUcesnika" Content="Detaljni prikaz učesnika" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center"></Label>
 
-        <Label x:Name="labelImeUcesnika" Content="Ime ucesnika:" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center"></Label>
-        <Label x:Name="labelGodineUcesnika" Content="Godine ucesnika:" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center"></Label>
-        <Label x:Name="labelOpisUcesnika" Content="Opis ucesnika:" Grid.Row="4" Grid.Column="2" VerticalAlignment="Center"></Label>
+        <Label x:Name="labelImeUcesnika" Content="Ime učesnika:" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center"></Label>
+        <Label x:Name="labelGodineUcesnika" Content="Godina rođenja:" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center"></Label>
+        <Label x:Name="labelOpisUcesnika" Content="Opis učesnika:" Grid.Row="4" Grid.Column="2" VerticalAlignment="Center"></Label>
         <Label x:Name="labelDatumDodavanja" Content="Datum dodavanja:" Grid.Row="5" Grid.Column="2" VerticalAlignment="Center"></Label>
-        <Label x:Name="labelSlikaUcesnika" Content="Slika ucesnika:" Grid.Row="6" Grid.Column="2" VerticalAlignment="Center"></Label>
+        <Label x:Name="labelSlikaUcesnika" Content="Slika učesnika:" Grid.Row="6" Grid.Column="2" VerticalAlignment="Center"></Label>
 
         <TextBox x:Name="textBoxIme" Grid.Row="2" Grid.Column="3" Margin="10 10"></TextBox>
         <TextBox x:Name="textBoxGodine" Grid.Row="3" Grid.Column="3" Margin="10 10"></TextBox>
@@ -46,7 +46,7 @@
         <TextBox x:Name="textBoxDatumDodavanja" Grid.Row="5" Grid.Column="3" Margin="10 10"></TextBox>
         <Image x:Name="imageSlika" Grid.Row="6" Grid.Column="3" Margin="10 10"></Image>
 
-        <Button x:Name="buttonIzadji" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" Content="Izadji" Margin="15 15" Click="buttonIzadji_Click"></Button>
+        <Button x:Name="buttonIzadji" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" Content="Izađi" Margin="15 15" Click="buttonIzadji_Click"></Button>
 
     </Grid>
 </Window>
