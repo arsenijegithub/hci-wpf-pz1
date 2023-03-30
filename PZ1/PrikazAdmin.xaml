@@ -56,7 +56,7 @@
         </DataGrid>
         -->
 
-        <DataGrid x:Name="dataGridUcesnici" ItemsSource="{Binding Ucesnici}" SelectionUnit="FullRow" IsReadOnly="True" AutoGenerateColumns="False" SelectionMode="Single" CanUserResizeColumns="False" Grid.Row="2" Grid.ColumnSpan="5">
+        <DataGrid x:Name="dataGridUcesnici" ItemsSource="{Binding Ucesnici}" SelectionUnit="FullRow" SelectionMode="Extended" IsReadOnly="True" AutoGenerateColumns="False" CanUserResizeColumns="False" Grid.Row="2" Grid.ColumnSpan="5">
             <DataGrid.Columns>
 
                 <DataGridTemplateColumn Header="Odaberite" Width="0.5*">

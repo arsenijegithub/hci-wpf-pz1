@@ -149,5 +149,10 @@
     <Resource Include="italic.png" />
     <Resource Include="underline.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AleksaNenadović.jpg" />
+    <Resource Include="DjordjePetrovicKaradjordje.jpg" />
+    <Resource Include="IlijaBircanin.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

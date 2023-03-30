@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Xaml;
 using Classes;
 using Klasa;
 
@@ -20,15 +22,18 @@ namespace PZ1
     /// <summary>
     /// Interaction logic for PrikazAdmin.xaml
     /// </summary>
+    /// 
+
     public partial class PrikazAdmin : Window
     {
         private DataIO serializer = new DataIO();
 
         public static BindingList<Ucesnik> Ucesnici { get; set; }
 
+        public bool IsSelected { get; set; }
+
         public string MyString { get; set; }
         public bool MyBool { get; set; }
-
 
         public PrikazAdmin()
         {
@@ -42,15 +47,6 @@ namespace PZ1
 
             InitializeComponent();
         }
-
-        /*
-        private void Window_Closing(object sender, CancelEventArgs e)
-        {
-            // Save the data to the data source
-            // For example, if you are using a List<T>, you can do this:
-            Ucesnici = (BindingList<Ucesnik>)dataGridUcesnici.ItemsSource;
-        }
-        */
 
         private void buttonNazad_Click(object sender, RoutedEventArgs e)
         {
@@ -83,6 +79,5 @@ namespace PZ1
         {
             serializer.SerializeObject<BindingList<Ucesnik>>(Ucesnici, "ucesnici.xml");
         }
-
     }
 }
